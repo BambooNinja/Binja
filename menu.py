@@ -48,12 +48,15 @@ def options():
 
         OPTIONS_TEXT_1 = get_font(50).render("Thank you for visiting Binja!", True, "Black")
         OPTIONS_TEXT_2 = get_font(35).render("Background : freepik.com ", True, "Black")
+        OPTIONS_TEXT_3 = get_font(35).render("Font : All-free-download.com", True, "Black")
 
         OPTIONS_TEXT_1_RECT = OPTIONS_TEXT_1.get_rect(center=(640, 200))
         OPTIONS_TEXT_2_RECT = OPTIONS_TEXT_2.get_rect(center=(640, 250))
+        OPTIONS_TEXT_3_RECT = OPTIONS_TEXT_2.get_rect(center=(590, 300))
 
         SCREEN.blit(OPTIONS_TEXT_1, OPTIONS_TEXT_1_RECT)
         SCREEN.blit(OPTIONS_TEXT_2, OPTIONS_TEXT_2_RECT)
+        SCREEN.blit(OPTIONS_TEXT_3, OPTIONS_TEXT_3_RECT)
 
         OPTIONS_BACK = Button(image=None, pos=(640, 460),
                               text_input="BACK", font=get_font(75), base_color="Black", hovering_color=(28,51,56))
