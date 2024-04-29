@@ -11,7 +11,9 @@ BG = pygame.transform.scale(pygame.image.load("assets/Background.jpg"), (1280, 7
 
 def get_font(size):  # Returns Press-Start-2P in the desired size
     return pygame.font.Font("assets/small_pixel.ttf", size)
-
+def draw_cross(screen):
+    pygame.draw.line(screen, (0, 0, 0), (1270, 10), (1250, 30), 2)
+    pygame.draw.line(screen, (0, 0, 0), (1250, 10), (1270, 30), 2)
 
 def play():
     while True:
@@ -90,7 +92,9 @@ def main_menu():
                                 text_input="CREDITS", font=get_font(110), base_color="#5bc3d9", hovering_color="White")
         QUIT_BUTTON = Button(image=pygame.image.load("assets/Quit Rect.png"), pos=(640, 575),
                              text_input="QUIT", font=get_font(110), base_color="#5bc3d9", hovering_color="White")
-        # Fuck You
+
+        draw_cross(SCREEN)  # Zeichne das Kreuzsymbol
+
         SCREEN.blit(MENU_TEXT, MENU_RECT)
 
         for button in [PLAY_BUTTON, OPTIONS_BUTTON, QUIT_BUTTON]:
@@ -102,6 +106,12 @@ def main_menu():
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
+                # Überprüfe, ob das Kreuzsymbol angeklickt wurde
+                mouse_x, mouse_y = pygame.mouse.get_pos()
+                if 1250 <= mouse_x <= 1270 and 10 <= mouse_y <= 30:
+                    pygame.quit()
+                    sys.exit()
+                # Überprüfe, ob die Buttons des Menüs angeklickt wurden
                 if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
                     play()
                 if OPTIONS_BUTTON.checkForInput(MENU_MOUSE_POS):
@@ -111,6 +121,5 @@ def main_menu():
                     sys.exit()
 
         pygame.display.update()
-
 
 main_menu()
