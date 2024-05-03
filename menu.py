@@ -22,12 +22,11 @@ def play():
 
         SCREEN.fill((163, 201, 209))
 
-        PLAY_TEXT = get_font(45).render("LEVEL"
-                                        "", True, "White")
-        PLAY_RECT = PLAY_TEXT.get_rect(center=(640, 260))
+        PLAY_TEXT = get_font(125).render("Level", True, "White")
+        PLAY_RECT = PLAY_TEXT.get_rect(center=(640, 120))
         SCREEN.blit(PLAY_TEXT, PLAY_RECT)
 
-        PLAY_BACK = Button(image=None, pos=(640, 460),
+        PLAY_BACK = Button(image=None, pos=(640, 600),
                            text_input="BACK", font=get_font(75), base_color="White", hovering_color="Green")
 
         PLAY_BACK.changeColor(PLAY_MOUSE_POS)
