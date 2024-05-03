@@ -22,7 +22,8 @@ def play():
 
         SCREEN.fill((163, 201, 209))
 
-        PLAY_TEXT = get_font(45).render("This is the PLAY screen.", True, "White")
+        PLAY_TEXT = get_font(45).render("LEVEL"
+                                        "", True, "White")
         PLAY_RECT = PLAY_TEXT.get_rect(center=(640, 260))
         SCREEN.blit(PLAY_TEXT, PLAY_RECT)
 
