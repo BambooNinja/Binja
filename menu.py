@@ -6,6 +6,7 @@ pygame.init()
 SCREEN = pygame.display.set_mode((1280, 720))
 pygame.display.set_caption("Menu")
 
+
 BG = pygame.transform.scale(pygame.image.load("assets/Background.jpg"), (1280, 720))
 
 
